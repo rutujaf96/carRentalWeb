@@ -1,0 +1,59 @@
+<%- include("navbar.ejs")%>
+
+<form action="/admin/save_basic_information" method="post" enctype="multipart/form-data">
+    <div class="container p-5 bg-white">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Add Basic Information</h1>
+            </div>
+            <div class="col-md-3">
+                <label for="">contatact heading</label>
+                <input type="text" class="form-control" value="<%=basic_information[0].contact_heading%>" name="contact_heading">
+            </div>
+            <div class="col-md-3">
+                <label for="">contact Number</label>
+                <input type="number" class="form-control" value="<%=basic_information[0].contact_number%>" name="contact_number">
+            </div>
+            <div class="col-md-3">
+                <label for="">email </label>
+                <input type="email" class="form-control" value="<%=basic_information[0].email%>" name="email">
+            </div>
+
+            <div class="col-md-3">
+                <label for="">Facebook Link</label>
+                <input type="text" class="form-control" value="<%=basic_information[0].facebook_link%>" name="facebook_link">
+            </div>
+            <div class="col-md-3">
+                <label for="">Instagram Link</label>
+                <input type="text" class="form-control" value="<%=basic_information[0].instagram_link%>" name="instagram_link">
+            </div>
+            <div class="col-md-3">
+                <label for="">Twitter Link</label>
+                <input type="text" class="form-control" value="<%=basic_information[0].twitter_link%>" name="twitter_link">
+            </div>
+            <div class="col-md-3">
+                <label for="">Linkedin Link</label>
+                <input type="text" class="form-control" value="<%=basic_information[0].linkedin_link%>" name="linkedin_link">
+            </div>
+            <div class="col-md-3">
+                <label for="">Google Map Link</label>
+                <input type="text" class="form-control" value="<%=basic_information[0].google_map_link%>" name="google_map_link">
+            </div>
+            <div class="col-md-12">
+                <label for="">Address</label>
+                <textarea name="address" id="" class="form-control" cols="30" rows="3">
+                    <%=basic_information[0].address%>
+                </textarea>
+
+
+            </div>
+            <div class="col-md-12 mt-5 text-center">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+<%- include("footer.ejs")%>

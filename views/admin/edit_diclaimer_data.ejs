@@ -1,0 +1,25 @@
+<%- include("navbar.ejs")%>
+
+<form action="/admin/update_disclaimer" method="post">
+    <div class="container p-5 bg-white">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Edit Disclaimer</h1>
+            </div>
+            <input type="hidden" name="disclaimer_id" value="<%=edit_diclaimer_data[0].disclaimer_id%>">
+            <div class="col-md-6">
+                <label for="">Title</label>
+                <input type="text" name="disclaimer_title" class="form-control" value="<%=edit_diclaimer_data[0].disclaimer_title%>">
+            </div>
+            <div class="col-md-6">
+                <label for="">Description</label>
+                <input type="text" name="disclaimer_desc" class="form-control" value="<%=edit_diclaimer_data[0].disclaimer_desc%>">
+            </div>
+            <div class="col-md-12 text-center mt-5">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<%- include("footer.ejs")%>

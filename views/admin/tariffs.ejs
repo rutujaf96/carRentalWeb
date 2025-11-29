@@ -1,0 +1,78 @@
+<%- include("navbar.ejs")%>
+
+<form action="/admin/save_tariffs" method="post" enctype="multipart/form-data">
+    <div class="container p-5 bg-white">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Add Cars</h1>
+            </div>
+            <div class="col-md-3">
+                <label for="">Car Name</label>
+                <input type="text" required class="form-control" name="car_name">
+            </div>
+
+            <div class="col-md-3">
+                <label for="">How Many Seats?</label>
+                <input type="text" name="how_many_seats" required class="form-control">
+            </div>
+            <div class="col-md-3">
+                <label for="">Engine Type</label>
+                <input type="text" required class="form-control" name="engine_type">
+            </div>
+
+            <div class="col-md-3">
+                <label for="">Enter Rate Per km</label>
+                <input type="number" required class="form-control" name="peakHours">
+            </div>
+            <div class="col-md-3">
+                <label for="">Car Image</label>
+                <input type="file" required class="form-control" name="car_image" >
+            </div>
+            <div class="col-md-12 text-center mt-5">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="container mt-5 overflow-auto">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered table-striped table-hover">
+                <tr>
+                    <th></th>
+                    <th>SN</th>
+                    <th>Car Name</th>
+                    <th>Seaters</th>
+                    <th>Engine Type</th>
+
+                    <th>Rate Per Km</th>
+                    <th>Car Image</th>
+                </tr>
+                <% for(var i=0;i<tariff_data.length;i++){%>
+                    <tr>
+                        <td style="white-space: nowrap;">
+                            <a href="/admin/edit_tariff_data/<%=tariff_data[i].tariffs_id%>">
+                                <button class="btn btn-primary"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                            </a>
+                            <a href="/admin/delete_tariff_data/<%=tariff_data[i].tariffs_id%>">
+                                <button onclick="return confirm('Are you Sure')" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                            </a>
+                        </td>
+                        <td><%=i+1%></td>
+                        <td><%=tariff_data[i].car_name%></td>
+                        <td><%=tariff_data[i].how_many_seats%></td>
+                        <td><%=tariff_data[i].engine_type%></td>
+                        <td><%=tariff_data[i].peakHours%></td>
+                        <td>
+                            <img src="/encoded_files/<%=tariff_data[i].car_image%>" alt="" width="300px" class="img-fluid">
+                        </td>
+                    </tr>
+                    <%}%>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<%- include("footer.ejs")%>

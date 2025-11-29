@@ -1,0 +1,56 @@
+<%- include("navbar.ejs")%>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Welcome to Admin Panel</h1>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <th>SN</th>
+                    <th>Client Name</th>
+                    <th>Client Mobile</th>
+                    <th>Peack place</th>
+                    <th>Drop Location</th>
+                    <th>Peak Date</th>
+                    <th>Peak Time</th>
+                    <th>Car Name</th>
+                    <th>Price Per KM</th>
+                    <th>Confirm </th>
+                </tr>
+                <%
+                booked_cars.forEach((val,i)=>{
+                    var mo=val.customer_mobile;
+                    %>
+                    <tr>
+                        <td><%=i+1%></td>
+                        <td><%=val.customer_name%></td>
+                        <td><a href="tel:<%=val.customer_mobile%>  "><%=val.customer_mobile%>  </a></td>
+                        <td><%=val.pick_place%></td>
+                        <td><%=val.drop_place%></td>
+                        <td><%=val.pick_date%></td>
+                        <td><%=val.pick_time%></td>
+                        <td><%=val.car_name%></td>
+                        <td><%=val.peakHours%>&#8377;</td>
+                        <td><form action="/admin/sms" method="post">
+                            <input type="hidden" value="<%=val.customer_name%>" name="name" id="">
+                            <input type="hidden" value="<%=val.car_name%>" name="car" id="">
+                            <input type="hidden" value="<%=val.customer_mobile%>" name="mobile" id="">
+                            <input type="hidden" value="<%=val.pick_date%>" name="date" id="">
+                            <input type="hidden" value="<%=val.pick_time%>" name="time" id="">
+                            <button class="btn btn-warning btn-sm" onclick="return confirm('comfirm for sending a message of booking ')" id="mo">send Message</button>
+                        </form></td>
+                     
+                    </tr>
+                    
+                    <%})
+                %>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+<%- include("footer.ejs")%>

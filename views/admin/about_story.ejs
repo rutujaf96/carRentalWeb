@@ -1,0 +1,29 @@
+<%- include("navbar.ejs")%>
+
+<form action="/admin/save_about_story" method="post" enctype="multipart/form-data">
+    <div class="container p-5 bg-white">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Add About Story</h1>
+            </div>
+            <div class="col-md-6">
+                <label for="">Story Title1</label>
+                <input type="text" class="form-control" value="<%=about_story[0].about_story_title1%>" name="about_story_title1">
+            </div>
+            <div class="col-md-6">
+                <label for="">Story Title2</label>
+                <input type="text" class="form-control" value="<%=about_story[0].about_story_title2%>" name="about_story_title2">
+            </div>
+            <div class="col-md-12">
+                <label for="">Story Description</label>
+                <textarea name="about_story_desc" class="form-control" cols="30" rows="5">
+                    <%=about_story[0].about_story_desc%>
+                </textarea>
+            </div>
+            <div class="col-md-12 text-center mt-5">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+<%- include("footer.ejs")%>

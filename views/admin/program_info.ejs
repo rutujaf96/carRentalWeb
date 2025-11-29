@@ -1,0 +1,44 @@
+
+<%- include("navbar.ejs")%>
+
+
+<form action="/admin/save_program_info" method="post" enctype="multipart/form-data">
+    <div class="container p-5 bg-white">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Add Program Information</h1>
+            </div>
+            <div class="col-md-4">
+                <label for="">Title</label>
+                <input type="text" value="<%=program_info[0].program_info_title%>" name="program_info_title" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <label for="">Description</label>
+                <input type="text" value="<%=program_info[0].program_info_desc%>" name="program_info_desc" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <label for="">Feature 1</label>
+                <input type="text" value="<%=program_info[0].program_info_feature1%>" name="program_info_feature_1" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <label for="">Feature 2</label>
+                <input type="text" value="<%=program_info[0].program_info_feature2%>" name="program_info_feature_2" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <label for="">Feature 3</label>
+                <input type="text" value="<%=program_info[0].program_info_feature3%>" name="program_info_feature_3" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <label for="">Image </label>
+                <input type="file" name="program_info_image" class="form-control">
+                <img src="/encoded_files/<%=program_info[0].program_info_image%>" alt="" class="img-fluid">
+
+            </div>
+            <div class="col-md-12 text-center mt-5">
+                <button class="btn btn-primary">Update</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<%- include("footer.ejs")%>

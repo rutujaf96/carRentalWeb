@@ -1,0 +1,41 @@
+<%- include("navbar.ejs")%>
+
+<form action="/admin/save_car_safety" method="post" enctype="multipart/form-data">
+    <div class="container p-5 bg-white">
+        <div class="row">
+            <div class="col-md-12 text-center bg-danger mb-3">
+                <h1>Update Car Safety</h1>
+            </div>
+            <div class="col-md-6">
+                <label for="">Title</label>
+                <input type="text" class="form-control" value="<%=car_safety[0].car_safety_title%>" name="car_safety_title">
+            </div>
+            <div class="col-md-6">
+                <label for="">Description</label>
+                <input type="text" class="form-control" value="<%=car_safety[0].car_safety_desc%>" name="car_safety_desc">
+            </div>
+            <div class="col-md-4">
+                <label for="">Image 1</label>
+                <input type="file" class="form-control" name="car_safety_image1">
+                <img src="/encoded_files/<%=car_safety[0].car_safety_image1%>" alt="" class="w-100" style="height: 300px;">
+            </div>
+            <div class="col-md-4">
+                <label for="">Image 2</label>
+                <input type="file" class="form-control" name="car_safety_image2">
+                <img src="/encoded_files/<%=car_safety[0].car_safety_image2%>" alt="" class="w-100" style="height: 300px;">
+
+            </div>
+            <div class="col-md-4">
+                <label for="">Image 3</label>
+                <input type="file" class="form-control" name="car_safety_image3">
+                <img src="/encoded_files/<%=car_safety[0].car_safety_image3%>" alt="" class="w-100" style="height: 300px;">
+
+            </div>
+            <div class="col-md-12 text-center mt-5">
+                <button class="btn btn-primary">Update</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<%- include("footer.ejs")%>

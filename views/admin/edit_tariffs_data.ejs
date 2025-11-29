@@ -1,0 +1,42 @@
+<%- include("navbar.ejs")%>
+
+<form action="/admin/update_tariffs" method="post" enctype="multipart/form-data">
+    <div class="container p-5 bg-white">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Edit Cars</h1>
+            </div>
+            <input type="hidden" name="tariffs_id" value="<%=edit_tariffs_data[0].tariffs_id%>">
+            <div class="col-md-3">
+                <label for="">Car Name</label>
+                <input type="text" class="form-control" name="car_name" value="<%=edit_tariffs_data[0].car_name%>">
+            </div>
+
+            <div class="col-md-3">
+                <label for="">How Many Seats?</label>
+                <input type="text" class="form-control" name="how_many_seats" value="<%=edit_tariffs_data[0].how_many_seats%>">
+            </div>
+            <div class="col-md-3">
+                <label for="">Engine Type</label>
+                <input type="text" class="form-control" name="engine_type" value="<%=edit_tariffs_data[0].engine_type%>">
+            </div>
+
+            <div class="col-md-3">
+                <label for="">Rate per Km</label>
+                <input type="text" class="form-control" name="peakHours" value="<%=edit_tariffs_data[0].peakHours%>">
+            </div>
+            <div class="col-md-3">
+                <label for="">Car Image</label>
+                <input type="file" class="form-control" name="car_image" >
+            </div>
+            <div class="col-md-6">
+                <img src="/encoded_files/<%=edit_tariffs_data[0].car_image%>" alt="" class="img-fluid w-75 h-75">
+            </div>
+            <div class="col-md-12 text-center mt-5">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<%- include("footer.ejs")%>

@@ -1,0 +1,30 @@
+<%- include("navbar.ejs")%>
+
+<div class="container">
+  <div class="row row--grid">
+    <!-- breadcrumb -->
+    <div class="col-12">
+      <ul class="breadcrumb">
+        <li class="breadcrumb__item"><a href="/">Home</a></li>
+        <li class="breadcrumb__item breadcrumb__item--active">Desclaimer</li>
+      </ul>
+    </div>
+    <!-- end breadcrumb -->
+
+    <!-- title -->
+    <div class="col-12">
+      <div class="main__title main__title--page">
+        <h1><%=disclaimer[0].disclaimer_title%></h1>
+
+        <div class="row" style="padding: 10px">
+          <p>
+            <%=disclaimer[0].disclaimer_desc%>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- end title -->
+  </div>
+</div>
+
+<%- include("footer.ejs")%>

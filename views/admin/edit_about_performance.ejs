@@ -1,0 +1,38 @@
+<%- include("navbar.ejs")%>
+
+<form action="/admin/update_about_performance" method="post" enctype="multipart/form-data">
+    <div class="container p-5 bg-white">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Edit Performance</h1>
+            </div>
+            <input type="hidden" name="about_performance_id" value="<%=edit_about_performance[0].about_performance_id%>">
+            <div class="col-md-6">
+                <label for="">Title</label>
+                <input type="text" class="form-control" name="about_performance_title" value="<%=edit_about_performance[0].about_performance_title%>">
+            </div>
+            <div class="col-md-6">
+                <label for="">Description</label>
+                <input type="text" class="form-control" name="about_performance_desc" value="<%=edit_about_performance[0].about_performance_desc%>">
+            </div>
+            <div class="col-md-4">
+                <label for="">Image 1</label>
+                <input type="file" class="form-control" name="about_performance_image1">
+                <img src="/encoded_files/<%=edit_about_performance[0].about_performance_image1%>" alt="" class="img-fluid w-50 h-50 mt-1">
+            </div>
+            <div class="col-md-4">
+                <label for="">Image 2</label>
+                <input type="file" class="form-control" name="about_performance_image2">
+                <img src="/encoded_files/<%=edit_about_performance[0].about_performance_image2%>" alt="" class="img-fluid w-50 h-50 mt-1">
+            </div>
+            <div class="col-md-4">
+                <label for="">Image 3</label>
+                <input type="file" class="form-control" name="about_performance_image3">
+                <img src="/encoded_files/<%=edit_about_performance[0].about_performance_image3%>" alt="" class="img-fluid w-50 h-50 mt-1">
+            </div>
+            <div class="col-md-12 text-center mt-5">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>

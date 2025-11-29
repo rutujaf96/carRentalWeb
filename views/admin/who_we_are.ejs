@@ -1,0 +1,25 @@
+<%- include("navbar.ejs")%>
+
+<form action="/admin/save_who_we_are" method="post" enctype="multipart/form-data">
+    <div class="container p-5 bg-white">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 >Update Who We Are</h1>
+            </div>
+            <div class="col-md-12">
+                <label for="">Title</label>
+                <input type="text" class="form-control" value="<%=who_we_are[0].who_we_are_title%>" name="who_we_are_title">
+            </div>
+            <div class="col-md-12">
+                <label for="">Description</label>
+                <textarea name="who_we_are_desc" class="form-control" id="" cols="30" rows="10">
+                    <%=who_we_are[0].who_we_are_desc%>
+                </textarea>
+            </div>
+            <div class="col-md-12 text-center mt-5">
+                <button class="btn btn-primary">Update</button>
+            </div>
+        </div>
+    </div>
+</form>
+<%- include("footer.ejs")%>

@@ -1,0 +1,24 @@
+<%- include("navbar.ejs")%>
+
+
+<form action="/admin/update_about_our_program" method="post" enctype="multipart/form-data">
+    <div class="container p-5 bg-white">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Edit About Our Program</h1>
+            </div>
+            <input type="hidden" name="about_our_program_id" class="form-control" value="<%=edit_about_program_data[0].about_our_program_id%>">
+            <div class="col-md-6">
+                <label for="">Title</label>
+                <input type="text" class="form-control" name="about_our_program_title" value="<%=edit_about_program_data[0].about_our_program_title%>">
+            </div>
+            <div class="col-md-6">
+                <label for="">Description</label>
+                <input type="text" class="form-control" name="about_our_program_desc" value="<%=edit_about_program_data[0].about_our_program_desc%>">
+            </div>
+            <div class="col-md-12 text-center mt-5">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>

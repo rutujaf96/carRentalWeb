@@ -1,0 +1,54 @@
+<%- include("navbar.ejs")%>
+<div class="container">
+    <form action="/admin/save_slider" class="p-2 shadow-lg" method="post" enctype="multipart/form-data">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-12">
+            <h1>Add Slider Image</h1>
+        </div>
+
+        
+        <div class="col-md-6 ">
+            <label for="">add Slider Image</label>
+           <input type="file" name="slider_image" class="form-control" id="">
+        </div>
+        <div class="col-md-12">
+            <center>
+                <button class="btn btn-primary mt-3">save</button>
+            </center>
+        </div>
+    </div>
+</form>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <tr>
+                    <th>SN</th>
+                    <th>Image</th>
+                    <th>action</th>
+
+                </tr>
+                <% slides.forEach((val,i)=>{%>
+                    <tr>
+                        <td><%=i+1%></td>
+                        <td><img src="/encoded_files/<%=val.slider_img%>" width="200px" alt=""></td>
+                        <td>
+                            <a href="/admin/del_slider/<%=val.id%>">
+                                <button onclick="return confirm('Are You Sure')" class="btn btn-outline-danger">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </a>
+                            <a href="/admin/edit_slider/<%=val.id%>">
+                                <button  class="btn btn-outline-primary">
+                                    <i class="fa fa-edit"></i>
+                                </button>
+                            </a>
+                        </td>
+                    </tr>
+                <%})%>
+            </table>
+        </div>
+    </div>
+</div>
+<%- include("footer.ejs")%>

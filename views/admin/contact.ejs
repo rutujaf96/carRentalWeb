@@ -1,0 +1,28 @@
+<%- include("navbar.ejs")%>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <tr>
+                    <th>SN</th>
+                    <th>Name</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                </tr>
+                <% contact.forEach((val,i)=>{%>
+                    <tr>
+                        <td><%=i+1%></td>
+                        <td><%=val.customer_name%></td>
+                        <td><%=val.customer_mobile%></td>
+                        <td><%=val.customer_email%></td>
+                        <td><%=val.customer_message%></td>
+
+                    </tr>
+                    <%})%>
+
+            </table>
+        </div>
+    </div>
+</div>
+<%- include("footer.ejs")%>

@@ -1,0 +1,44 @@
+
+<%- include("navbar.ejs")%>
+
+
+<form action="/admin/update_program_info" method="post" enctype="multipart/form-data">
+    <div class="container p-5 bg-white">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Edit Program Information</h1>
+            </div>
+            <input type="hidden" class="form-control" name="program_info_id" value="<%=program_info_data[0].program_info_id%>">
+            <div class="col-md-4">
+                <label for="">Title</label>
+                <input type="text" name="program_info_title" class="form-control" value="<%=program_info_data[0].program_info_title%>">
+            </div>
+            <div class="col-md-4">
+                <label for="">Description</label>
+                <input type="text" name="program_info_desc" class="form-control" value="<%=program_info_data[0].program_info_desc%>">
+            </div>
+            <div class="col-md-4">
+                <label for="">Feature 1</label>
+                <input type="text" name="program_info_feature_1" class="form-control" value="<%=program_info_data[0].program_info_feature1%>">
+            </div>
+            <div class="col-md-4">
+                <label for="">Feature 2</label>
+                <input type="text" name="program_info_feature_2" class="form-control" value="<%=program_info_data[0].program_info_feature2%>">
+            </div>
+            <div class="col-md-4">
+                <label for="">Feature 3</label>
+                <input type="text" name="program_info_feature_3" class="form-control" value="<%=program_info_data[0].program_info_feature3%>">
+            </div>
+            <div class="col-md-4">
+                <label for="">Image </label>
+                <input type="file" name="program_info_image" class="form-control">
+                <img src="/encoded_files/<%=program_info_data[0].program_info_image%>" alt="" class="img-fluid">
+            </div>
+            <div class="col-md-12 text-center mt-5">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<%- include("footer.ejs")%>

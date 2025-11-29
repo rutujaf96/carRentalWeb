@@ -1,0 +1,27 @@
+<%- include("navbar.ejs")%>
+
+<form action="/admin/update_about_story" method="post" enctype="multipart/form-data">
+    <div class="container p-5 bg-white">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Edit About Story</h1>
+            </div>
+            <input type="hidden" name="about_story_id" value="<%=edit_about_story[0].about_story_id%>">
+            <div class="col-md-4">
+                <label for="">Story Title1</label>
+                <input type="text" class="form-control" name="about_story_title1" value="<%=edit_about_story[0].about_story_title1%>">
+            </div>
+            <div class="col-md-4">
+                <label for="">Story Title2</label>
+                <input type="text" class="form-control" name="about_story_title2" value="<%=edit_about_story[0].about_story_title2%>">
+            </div>
+            <div class="col-md-4">
+                <label for="">Story Description</label>
+                <input type="text" class="form-control" name="about_story_desc" value="<%=edit_about_story[0].about_story_desc%>">
+            </div>
+            <div class="col-md-12 text-center mt-5">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>

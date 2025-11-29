@@ -1,0 +1,27 @@
+<%- include("navbar.ejs")%>
+
+<form action="/admin/update_our_office" method="post" enctype="multipart/form-data">
+    <div class="container bg-white p-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Edit Office Details</h1>
+            </div>
+            <input type="hidden" name="our_office_id" value="<%=edit_our_office[0].our_office_id%>">
+            <div class="col-md-4">
+                <label for="">Title</label>
+                <input type="text" class="form-control" name="our_office_title" value="<%=edit_our_office[0].our_office_title%>">
+            </div>
+            <div class="col-md-4">
+                <label for="">Description</label>
+                <input type="text" class="form-control" name="our_office_desc" value="<%=edit_our_office[0].our_office_desc%>">
+            </div>
+            <div class="col-md-4">
+                <label for="">Address</label>
+                <input type="text" class="form-control" name="our_office_address" value="<%=edit_our_office[0].our_office_address%>">
+            </div>
+            <div class="col-md-12 mt-5 text-center">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>

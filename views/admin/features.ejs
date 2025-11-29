@@ -1,0 +1,54 @@
+<%- include("navbar.ejs")%>
+
+<form action="/admin/save_features" method="post" enctype="multipart/form-data">
+    <div class="container bg-white p-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Add Features</h1>
+            </div>
+            <div class="col-md-6">
+                <label for="">Title</label>
+                <input type="text" class="form-control" name="features_title">
+            </div>
+            <div class="col-md-6">
+                <label for="">Description</label>
+                <input type="text" class="form-control" name="features_desc">
+            </div>
+            <div class="col-md-12 text-center mt-5">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="container mt-5 overflow-auto">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered table-striped table-hover">
+                <tr>
+                    <th></th>
+                    <th>SN</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                </tr>
+                <% for(var i=0;i<features_data.length;i++){%>
+                    <tr>
+                        <td>
+                            <a href="/admin/edit_features/<%=features_data[i].features_id%>">
+                                <button class="btn btn-primary"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                            </a>
+                            <a href="/admin/delete_features/<%=features_data[i].features_id%>">
+                                <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                            </a>
+                        </td>
+                        <td><%=i+1%></td>
+                        <td><%=features_data[i].features_title%></td>
+                        <td><%=features_data[i].features_desc%></td>
+                    </tr>
+                    <%}%>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include("footer.ejs")%>

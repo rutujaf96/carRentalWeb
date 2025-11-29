@@ -1,0 +1,112 @@
+<%- include("navbar.ejs")%>
+
+
+  <!-- ======= About Us Section ======= -->
+  <% for(var i=0;i<program_info.length;i++){%>
+  <section id="about" class="about">
+    <div class="container">
+
+      <div class="section-title" data-aos="fade-up">
+        <h2><%=program_info[i].program_info_title%></h2>
+      </div>
+
+      <div class="row content">
+        <div class="col-lg-12" data-aos="fade-up" data-aos-delay="150">
+          <p>
+            <%=program_info[i].program_info_desc%>
+          </p>
+          <ul>
+            <li><i class="ri-check-double-line"></i><%=program_info[i].program_info_feature1%></li>
+            <li><i class="ri-check-double-line"></i><%=program_info[i].program_info_feature2%></li>
+            <li><i class="ri-check-double-line"></i><%=program_info[i].program_info_feature3%></li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End About Us Section -->
+  <%}%>
+
+  <!-- ======= Counts Section ======= -->
+  <section id="counts" class="counts">
+    <div class="container">
+      <div class="row">
+        <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-xl-start"
+          data-aos="fade-right" data-aos-delay="150">
+          <img src="/encoded_files/<%=program_info[0].program_info_image%>" alt="" class="img-fluid">
+        </div>
+
+        <div class="col-xl-7 d-flex align-items-stretch pt-4 pt-xl-0" data-aos="fade-left" data-aos-delay="300">
+          <div class="content d-flex flex-column justify-content-center">
+            <div class="row">
+              <% for(var i=0;i<about_program_data.length;i++){%>
+              <div class="col-md-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="icofont-simple-smile"></i>
+                  <span data-toggle="counter-up"><%=about_program_data[i].about_our_program_title%></span>
+                  <p><strong><%=about_program_data[i].about_our_program_desc%></strong></p>
+                </div>
+              </div>
+              <%}%>
+
+              <!-- <div class="col-md-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="icofont-document-folder"></i>
+                  <span data-toggle="counter-up">500+</span>
+                  <p><strong>Vehicles</strong> Fleet</p>
+                </div>
+              </div>
+
+              <div class="col-md-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="icofont-clock-time"></i>
+                  <span data-toggle="counter-up">5+</span>
+                  <p><strong>Years of experience</strong> with 10,000+ happy customers & counting</p>
+                </div>
+              </div>
+
+              <div class="col-md-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="icofont-award"></i>
+                  <span data-toggle="counter-up">4</span>
+                  <p><strong>4.4 Rated App</strong> on Google Playstore</p>
+                </div>
+              </div> -->
+            </div>
+          </div><!-- End .content-->
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Counts Section -->
+
+
+  <!-- ======= Services Section ======= -->
+  <section id="services" class="services">
+    <div class="container">
+
+      <div class="section-title" data-aos="fade-up">
+        <h2>Features of being our Partner</h2>
+        <p>Differentiate your business</p>
+      </div>
+
+      <div class="row">
+        <% for(var i=0;i<features_data.length;i++){%>
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon"><i class="bx bxl-dribbble"></i></div>
+            <h4 class="title"><a href="#"><%=features_data[i].features_title%></a></h4>
+            <p class="description"><%=features_data[i].features_desc%></p>
+          </div>
+        </div>
+        <%}%>
+
+      </div>
+
+    </div>
+  </section><!-- End Services Section -->
+
+
+
+  <%- include("footer.ejs")%>

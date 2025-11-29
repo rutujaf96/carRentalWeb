@@ -1,0 +1,55 @@
+<%- include("navbar.ejs")%>
+
+<form action="/admin/save_disclaimer" method="post">
+    <div class="container p-5 bg-white">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Add Disclaimer</h1>
+            </div>
+            <!-- <input type="hidden" name="disclaimer_id"> -->
+            <div class="col-md-6">
+                <label for="">Title</label>
+                <input type="text" name="disclaimer_title" class="form-control">
+            </div>
+            <div class="col-md-6">
+                <label for="">Description</label>
+                <input type="text" name="disclaimer_desc" class="form-control">
+            </div>
+            <div class="col-md-12 text-center mt-5">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="container overflow-auto mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered table-striped table-hover">
+                <tr>
+                    <th></th>
+                    <th>SN</th>
+                    <th>Title</th>
+                    <th>Desc</th>
+                </tr>
+                <% for(var i=0;i<disclaimer_data.length;i++){%>
+                    <tr>
+                        <td style="white-space: nowrap;">
+                            <a href="/admin/edit_disclaimer_data/<%=disclaimer_data[i].disclaimer_id%>">
+                                <button class="btn btn-primary"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                            </a>
+                            <a href="/admin/delete_disclaimer_data/<%=disclaimer_data[i].disclaimer_id%>">
+                                <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                            </a>
+                        </td>
+                        <td><%=i+1%></td>
+                        <td><%=disclaimer_data[i].disclaimer_title%></td>
+                        <td><%=disclaimer_data[i].disclaimer_desc%></td>
+                    </tr>
+                    <%}%>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include("footer.ejs")%>
